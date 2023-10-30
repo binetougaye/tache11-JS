@@ -11,7 +11,7 @@ body {
     font-family: 'Poppins', sans-serif;
 }
 
-#todo {
+#todos {
     background-color: #ecf0f1;
     max-width: 1000px;
     margin: 80px auto;
@@ -108,6 +108,23 @@ h1 {
     color: #3498db;
 }
 
-.text {
+.todo {
+    /* display: none; */
+}
+
+.changecolor {
+    background-color: red;
     display: none;
+}
+
+#todo {
+    background-color: red;
+}
+
+#doing {
+    background-color: orange;
+}
+
+#done {
+    background-color: green;
 }
