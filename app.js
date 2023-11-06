@@ -1,26 +1,30 @@
 // Variables
-let input = document.querySelector("#input");
-let buttonAdd = document.querySelector(".btn");
-let tache = document.querySelector("#ajout");
-let buttons = document.querySelector(".buttons");
-let btnTodo = document.querySelector("#todo");
-let btnDoing = document.querySelector("#doing");
-let btnDone = document.querySelector("#done");
 let container = document.querySelector(".todo");
-// Fonction qui recupére la valeur de l'input
-function recupInputValue() {
-  let recup = input.value;
-  tache.innerHTML += recup;
-  container.style.display = "block";
-}
-buttonAdd.addEventListener("click", recupInputValue);
-// Fonction qui change le BGcolor
-btnTodo.addEventListener("click", () => {
-  container.style.backgroundColor = "red";
+let input = document.getElementById("input");
+let btnAdd = document.querySelector(".btn");
+let todoBtn = document.getElementById("todo");
+console.log(todoBtn);
+let todoDoing = document.getElementById("doing");
+let todoDone = document.getElementById("done");
+let ajout = document.getElementById("ajout");
+
+// Event Listeners
+btnAdd.addEventListener("click", function () {
+  container.innerHTML += ` <div class="row justify-content-center align-items-center">
+  <div class="col-lg-6 ajout">
+      <p class="mt-2" id="ajout">${input.value}</p>
+  </div>
+  <div class="col-lg-6 text-end buttons">
+      <button id="todo" class="border-0 text-white">To do</button>
+      <button id="doing" class="border-0 text-white">Doing</button>
+      <button id="done" class="border-0 text-white">Done</button>
+  </div>
+</div>`;
 });
-btnDoing.addEventListener("click", () => {
-  container.style.backgroundColor = "orange";
-});
-btnDone.addEventListener("click", () => {
-  container.style.backgroundColor = "green";
-});
+
+// todoBtn.addEventListener("click", function () {});
+// How to create new element
+// // let newElement = document.createElement("p");
+// // newElement.innerHTML = "hello";
+// let newContent = document.createTextNode("hi");
+// // console.log(newElement);

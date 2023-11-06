@@ -121,9 +121,7 @@ h1 {
     text-wrap: wrap;
 }
 
-.todo {
-    display: none;
-}
+
 
 #todo {
     background-color: red;
