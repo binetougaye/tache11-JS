@@ -117,6 +117,14 @@ h1 {
     display: none;
 }
 
+#ajout {
+    text-wrap: wrap;
+}
+
+.todo {
+    display: none;
+}
+
 #todo {
     background-color: red;
 }

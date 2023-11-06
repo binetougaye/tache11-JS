@@ -1,23 +1,26 @@
 // Variables
-let button = document.querySelector(".btn");
-let todo = document.querySelector("#todos");
 let input = document.querySelector("#input");
-let ajout = document.querySelector("#ajout");
-let btn1 = document.querySelector("#todo");
-let btn2 = document.querySelector("#doing");
-let btn3 = document.querySelector("#done");
-button.addEventListener("click", () => {
-  todo.innerHTML += `<div class="row  justify-content-center align-items-center"  id="todos">
-    <div class="col-lg-6">
-        <p class="mt-2" id="ajout">${input.value}</p>
-    </div>
-    <div class="col-lg-6 text-end">
-        <button id="todo" class="border-0 text-white">To do</button>
-        <button id="doing" class="border-0 text-white">Doing</button>
-        <button id="done" class="border-0 text-white">Done</button>
-    </div>
-</div>`;
+let buttonAdd = document.querySelector(".btn");
+let tache = document.querySelector("#ajout");
+let buttons = document.querySelector(".buttons");
+let btnTodo = document.querySelector("#todo");
+let btnDoing = document.querySelector("#doing");
+let btnDone = document.querySelector("#done");
+let container = document.querySelector(".todo");
+// Fonction qui recupére la valeur de l'input
+function recupInputValue() {
+  let recup = input.value;
+  tache.innerHTML += recup;
+  container.style.display = "block";
+}
+buttonAdd.addEventListener("click", recupInputValue);
+// Fonction qui change le BGcolor
+btnTodo.addEventListener("click", () => {
+  container.style.backgroundColor = "red";
 });
-btn1.addEventListener("click", () => {
-  todo.style.backgroundColor = "red";
+btnDoing.addEventListener("click", () => {
+  container.style.backgroundColor = "orange";
+});
+btnDone.addEventListener("click", () => {
+  container.style.backgroundColor = "green";
 });
