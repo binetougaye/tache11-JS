@@ -27,7 +27,7 @@ btnAdd.addEventListener("click", function () {
     tabTodos.push(newTodo);
     container.innerHTML = "";
     tabTodos.forEach((todo) => {
-      container.innerHTML += ` <div class="mt-2 row bg-danger  justify-content-center align-items-center">
+      container.innerHTML += ` <div class="mt-2 row   justify-content-center align-items-center">
     <div class="col-lg-6 ajout">
         <p class="mt-2 ${todo.id}" id="ajout">${todo.title}</p>
     </div>
@@ -40,7 +40,7 @@ btnAdd.addEventListener("click", function () {
     });
   }
   input.value = "";
-  saveData();
+  // saveData();
   // container.style.backgroundColor = "red";
 });
 
@@ -48,18 +48,18 @@ function changeBgOrange(e) {
   console.log(e);
   let rowTodo = e.parentElement.parentElement;
   console.log(rowTodo);
-  rowTodo.classList.add("bg-warning");
+  rowTodo.style.backgroundColor = "orange";
 }
 function changeBgGreen(e) {
   console.log(e);
   let rowTodo = e.parentElement.parentElement;
   console.log(rowTodo);
-  rowTodo.classList.add("bg-success");
+  rowTodo.style.backgroundColor = "green";
 }
-function saveData() {
-  localStorage.setItem("data", container.innerHTML);
-}
-function showTask() {
-  container.innerHTML = localStorage.getItem("data");
-}
-showTask();
+// function saveData() {
+//   localStorage.setItem("data", container.innerHTML);
+// }
+// function showTask() {
+//   container.innerHTML = localStorage.getItem("data");
+// }
+// showTask();
